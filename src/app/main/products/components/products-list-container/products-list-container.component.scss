@@ -1,0 +1,40 @@
+:host {
+  height: 100%;
+
+
+  @mixin centerElement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ::ng-deep {
+    .table-container {
+      max-height: 700px;
+      overflow: auto;
+
+      .mat-mdc-table {
+        width: 100%;
+        height: 100%;
+
+        th {
+          padding: 16px;
+        }
+
+        .rating {
+          @include centerElement;
+        }
+
+        .actions {
+          @include centerElement;
+        }
+      }
+
+      .mat-paginator-sticky {
+        bottom: 0px;
+        position: sticky;
+        z-index: 10;
+      }
+    }
+  }
+}

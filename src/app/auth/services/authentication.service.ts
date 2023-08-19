@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +22,17 @@ export class AuthenticationService {
     else return false;
   }
 
-  public logout(): void {
+  public logout(): boolean {
     localStorage.clear();
+    return true;
   }
 
   public checkUserIsLogged(): boolean {
     return localStorage.getItem('username') !== null;
   }
+
+  public checkLogin(): Observable<boolean> {
+    return (this.checkUserIsLogged()) ? of(true) : of(false);
+  }
+
 }

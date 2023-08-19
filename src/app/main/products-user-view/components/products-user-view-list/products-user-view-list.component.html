@@ -1,0 +1,23 @@
+<div fxLayout="row wrap" fxLayoutAlign="start space-around" fxLayoutGap="gappx" fxLayoutGap="30px" [fxFlex]="100">
+  <mat-card [fxFlex]="92" class="total-count-card" fxLayoutAlign="end end">
+    <div class="total-count">
+      Showing {{products.length}} of {{totalCount}} results
+    </div>
+  </mat-card>
+
+  <ng-container *ngFor="let product of products;trackBy:identify">
+    <mat-card [fxFlex]="'300px'" class="product-card">
+      <mat-card-header>
+        <img [src]="product?.image" class="card-image">
+      </mat-card-header>
+      <mat-card-content>
+        <div class="product-category">{{product?.category}}</div>
+        <div class="product-title">{{product?.title}}</div>
+        <div class="product-rating">{{product?.rating?.rate}} 
+          <mat-icon class="star-icon">star</mat-icon>
+          <span class="review">({{product?.rating?.count }} Reviews)</span></div>
+        <div class="product-price">{{product?.price | currency:'EGP'}}</div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>

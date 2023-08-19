@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/auth/authentication.service';
-  
+import { AuthenticationService } from 'src/app/auth/services/authentication.service';
+import { AuthorizationService } from 'src/app/auth/services/authorization.service';
+
 @Component({
   selector: 'login-form',
   templateUrl: './login-form.component.html',
@@ -17,6 +18,7 @@ export class LoginFormComponent {
   });
 
   constructor(private _authService: AuthenticationService,
+    private _authorizationService: AuthorizationService,
     private _router: Router) { }
 
   public onSubmit(): void {
@@ -26,7 +28,8 @@ export class LoginFormComponent {
     setTimeout(() => {
       this.isLoading = false;
       if (this._authService.login(formValue?.username, formValue?.password)) {
-        this._router.navigate(['products']);
+          let route = this._authorizationService.getRoles().includes('ADMIN') ? ['admin/products'] : ['user/products'];
+          this._router.navigate(route);
       }
       else alert('Invalid credentials');
     }, 1500);

@@ -1,0 +1,7 @@
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx" [fxFlex]="100">
+
+  <products-user-filters [categories]="categories" [fxFlex]="20"
+    (selectedCategoriesChange)="getSelectedCategories($event?.categories)"></products-user-filters>
+
+  <products-user-view-list [totalCount]="totalCount" [products]="filteredProducts" [fxFlex]="80"></products-user-view-list>
+</div>

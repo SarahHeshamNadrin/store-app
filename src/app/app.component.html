@@ -1,1 +1,21 @@
-<router-outlet></router-outlet>
+<ng-container *ngIf="_authService?.checkUserIsLogged(); else showDefault">
+  <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="gappx" [fxFlex]="100" class="app-container" >
+    <p [fxFlex]="100">
+      <mat-toolbar color="primary">
+        <span>Storify</span>
+        <span class="spacer"></span>
+        <button mat-icon-button (click)="logout()">
+         <mat-icon>logout</mat-icon>
+       </button>
+      </mat-toolbar>
+    </p>
+  
+    <div class="content" [fxFlex]="100">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #showDefault>
+  <router-outlet></router-outlet>
+</ng-template>

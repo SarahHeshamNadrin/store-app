@@ -1,0 +1,51 @@
+:host {
+
+  ::ng-deep {
+    .total-count-card {
+      margin-bottom: 30px;
+      .total-count {
+        color: #837e7e;
+        padding: 20px;
+      }
+    }
+
+    .product-card {
+      margin-bottom: 30px;
+      .card-image {
+        width: 275px;
+        height: 325px;
+      }
+
+      .product-category {
+        font-size: 14px;
+        color: #837e7e;
+        text-transform: capitalize;
+        margin-top: 10px;
+      }
+
+      .product-title {
+        font-size: 18px;
+        font-weight: 500;
+        margin: 10px 0;
+        line-height: normal;
+      }
+
+      .product-price {
+        font-size: 16px;
+        color:#673AB7;
+        font-weight: 500;
+      }
+
+      .product-rating {
+        font-size: 16px;
+        margin-bottom: 10px;
+        display: inline-flex;
+        align-items: center;
+        .review {
+          margin-left: 5px;
+          color: darkgray;
+        }
+      }
+    }
+  }
+}

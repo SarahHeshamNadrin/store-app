@@ -1,0 +1,15 @@
+:host {
+
+  ::ng-deep {
+    .filter-title {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .mdc-list-item__primary-text {
+      color: #837e7e;
+      font-size: 14px;
+      text-transform: capitalize;
+    }
+  }
+}

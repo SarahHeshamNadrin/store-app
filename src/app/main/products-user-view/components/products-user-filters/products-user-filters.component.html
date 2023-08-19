@@ -1,0 +1,13 @@
+<div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="gappx">
+
+  <mat-card>
+    <mat-card-content>
+      <div class="filter-title">Categories</div>
+      <mat-selection-list #categoriesList (selectionChange)="getSelectedOption($event)">
+        <mat-list-option *ngFor="let category of categories" [value]="category">
+          {{category}}
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-card-content>
+  </mat-card>
+</div>
