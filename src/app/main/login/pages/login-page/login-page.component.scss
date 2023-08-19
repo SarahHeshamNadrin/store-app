@@ -1,0 +1,12 @@
+:host {
+  height: 100%;
+
+  .login-page {
+    background-size: cover;
+    background-image: url('/assets/images/background.svg');
+
+    login-form {
+      min-width: 325px;
+    }
+  }
+}
